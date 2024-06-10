@@ -34,12 +34,13 @@ bg_map %>%
   stat_density2d(data=dataset, aes(x = long, y = lat, fill = after_stat(level)), alpha=0.5, geom = "polygon", bins = 25) +
   scale_fill_gradient(low = "blue", high = "red") +
   #scale_color_brewer("PuBuGn") +
-  scale_x_continuous(limits=c(MIN_LONG-MARGIN, MAX_LONG+MARGIN))+
+  scale_x_continuous(limits=c(MIN_LONG-MARGIN, MAX_LONG))+
   scale_y_continuous(limits=c(MIN_LAT-MARGIN, MAX_LAT+MARGIN))+
   theme_minimal() +
   labs(title = "Alternative Fueling Stations in the United States",
        x = "Longitude",
-       y = "Latitude")
+       y = "Latitude",
+       fill = "Density")
 
 # bg_map %>% 
 #   ggplot() +
